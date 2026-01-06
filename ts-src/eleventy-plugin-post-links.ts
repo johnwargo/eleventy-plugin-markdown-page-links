@@ -25,8 +25,8 @@ var log = logger(conf);
 
 module.exports = function (eleventyConfig: any, options: ModuleOptions = {}) {
   eleventyConfig.addShortcode("postLinks", function () {
-    
-     const debugMode = options.debugMode || false;
+
+    const debugMode = options.debugMode || false;
     log.level(debugMode ? log.DEBUG : log.INFO);
     log.debug('Debug mode enabled\n');
 
