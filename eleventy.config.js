@@ -1,8 +1,8 @@
-const postLinks = require('./eleventy-plugin-post-links.js');
+import postLinksPlugin from './eleventy-plugin-post-links.js';
 
 module.exports = eleventyConfig => {
 
-  eleventyConfig.addPlugin(postLinks);
+  eleventyConfig.addPlugin(postLinksPlugin);
 
 	eleventyConfig.addPassthroughCopy("src/assets/");
 	
