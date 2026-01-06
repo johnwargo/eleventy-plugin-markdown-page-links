@@ -12,6 +12,9 @@ conf.prefix = function (record) {
 var log = (0, cli_logger_1.default)(conf);
 module.exports = function (eleventyConfig, options = {}) {
     eleventyConfig.addShortcode("postLinks", function () {
+        const debugMode = options.debugMode || false;
+        log.level(debugMode ? log.DEBUG : log.INFO);
+        log.debug('Debug mode enabled\n');
         return "<< Post Links Section >>";
     });
 };
