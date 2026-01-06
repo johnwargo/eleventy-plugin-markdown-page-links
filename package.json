@@ -1,0 +1,21 @@
+{
+  "name": "eleventy-plugin-post-links",
+  "version": "0.0.1",
+  "description": "An Eleventy plugin to generate a post links section in a post or page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnwargo/eleventy-plugin-post-links.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/johnwargo/eleventy-plugin-post-links/issues"
+  },
+  "homepage": "https://github.com/johnwargo/eleventy-plugin-post-links#readme"
+}
