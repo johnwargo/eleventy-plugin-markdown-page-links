@@ -1,9 +1,10 @@
 /***********************************************
- * Eleventy Plugin Post Links
+ * Eleventy Plugin Markdown Page Links
  * 
  * By John M. Wargo
  * https://johnwargo.com
  ***********************************************/
+
 //@ts-ignore
 import { UserConfig } from '@11ty/eleventy';
 
@@ -71,7 +72,7 @@ export default function (eleventyConfig: UserConfig, options: ModuleOptions = {}
     // Do we have at least the minimum number of links?
     if (links.length < options.minimumLinks!) {
       // Then build the link list
-      
+
 
     }
     return resultStr;
