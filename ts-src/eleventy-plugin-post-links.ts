@@ -23,7 +23,7 @@ conf.prefix = function (record: any) {
 }
 var log = logger(conf);
 
-module.exports = function (eleventyConfig: any, options: ModuleOptions = {}) {
+export default function (eleventyConfig: any, options: ModuleOptions = {}) {
   eleventyConfig.addShortcode("postLinks", function () {
 
     const debugMode = options.debugMode || false;
@@ -32,4 +32,5 @@ module.exports = function (eleventyConfig: any, options: ModuleOptions = {}) {
 
     return "<< Post Links Section >>";
   });
+  
 }

@@ -1,18 +1,17 @@
-header, nav{
-  padding-top: 0px;
-  padding-bottom: 0px;
+/* Custom styling provided by Scott Good. */
+body header {
+  padding: 3rem 1rem 0;
 }
 
-nav{ 
-  margin-bottom: 0px;
+header nav {
+  margin-bottom: 0;
 }
 
-main {
-  padding-top: 0px;
-  padding-bottom: 0px;
+body main, body footer {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
-hr {
-  margin-top: 0px;
-  margin-bottom: 0px;
+footer hr {
+  margin-bottom: 0;
 }
