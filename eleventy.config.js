@@ -1,9 +1,8 @@
-// import './eleventy-plugin-post-links.js';
+import postLinksPlugin from './eleventy-plugin-post-links.js';
 
-// module.exports = eleventyConfig => {
 export default async function (eleventyConfig) {
 	
-	// eleventyConfig.addPlugin(postLinksPlugin);
+	eleventyConfig.addPlugin(postLinksPlugin);
 
 	eleventyConfig.addPassthroughCopy("src/assets/");
 
