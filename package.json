@@ -21,8 +21,7 @@
   },
   "homepage": "https://github.com/johnwargo/eleventy-plugin-post-links#readme",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.2",
-    "cli-logger": "^0.5.40"
+    "@11ty/eleventy": "^3.1.2"
   },
   "devDependencies": {
     "@types/node": "^20.4.2",
