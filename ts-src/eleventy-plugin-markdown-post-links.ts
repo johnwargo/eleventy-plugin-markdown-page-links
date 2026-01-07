@@ -6,8 +6,11 @@
  ***********************************************/
 //@ts-ignore
 import { UserConfig } from '@11ty/eleventy';
-//@ts-ignore
-import markdownLinkExtractor from 'markdown-link-extractor';
+
+type LinkRecord = {
+  title: string,
+  url: string
+}
 
 type ModuleOptions = {
   collapsible?: boolean,
@@ -32,6 +35,7 @@ const defaultConfig: ModuleOptions = {
 }
 
 const APP_NAME = 'Eleventy-Plugin-Post-Links';
+const regex = /\!*\[([^\]]+)\]\(([^)]+)\)/g;
 
 export default function (eleventyConfig: UserConfig, options: ModuleOptions = {}) {
 
@@ -48,14 +52,23 @@ export default function (eleventyConfig: UserConfig, options: ModuleOptions = {}
       return `[${APP_NAME}] When using 'collapsible' option, you must also provide a 'sectionTitle' option.`;
     }
 
-    //@ts-ignore
-    // console.log(this.page.title);
-    //@ts-ignore
-    // console.dir(this.page);
+    var links: LinkRecord[] = [];
+    var link: LinkRecord;
 
     //@ts-ignore
-    const links = markdownLinkExtractor(this.page.rawInput);
-    console.dir(links);
+    let content = this.page.rawInput;
+    let match;
+    while ((match = regex.exec(content)) !== null) {
+      link = {
+        title: match[1],
+        url: match[2]
+      };
+      links.push(link);
+    }
+
+    if (links.length > 0 ){
+      console.dir(links);
+    }
 
     return "<< Post Links Section >>";
   });

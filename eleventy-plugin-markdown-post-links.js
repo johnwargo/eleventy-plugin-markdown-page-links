@@ -1,4 +1,3 @@
-import markdownLinkExtractor from 'markdown-link-extractor';
 const defaultConfig = {
     'collapsible': false,
     'contentScope': 'PostLinksScope',
@@ -10,6 +9,7 @@ const defaultConfig = {
     'debugMode': true
 };
 const APP_NAME = 'Eleventy-Plugin-Post-Links';
+const regex = /\!*\[([^\]]+)\]\(([^)]+)\)/g;
 export default function (eleventyConfig, options = {}) {
     eleventyConfig.addShortcode("postLinks", function () {
         options = { ...defaultConfig, ...options };
@@ -20,9 +20,20 @@ export default function (eleventyConfig, options = {}) {
         if (options.collapsible && !options.sectionTitle) {
             return `[${APP_NAME}] When using 'collapsible' option, you must also provide a 'sectionTitle' option.`;
         }
-        console.dir(this.page);
-        const links = markdownLinkExtractor(this.page.rawInput);
-        console.dir(links);
+        var links = [];
+        var link;
+        let content = this.page.rawInput;
+        let match;
+        while ((match = regex.exec(content)) !== null) {
+            link = {
+                title: match[1],
+                url: match[2]
+            };
+            links.push(link);
+        }
+        if (links.length > 0) {
+            console.dir(links);
+        }
         return "<< Post Links Section >>";
     });
 }
