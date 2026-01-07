@@ -12,4 +12,11 @@ Options:
 
 ## Tasks
 
+- [ ] Publish on Netlify
+- [x] Netlify link in footer
 - [ ] Omit duplicate links in output
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+
