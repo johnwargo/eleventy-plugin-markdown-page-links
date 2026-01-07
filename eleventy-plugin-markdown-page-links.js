@@ -14,13 +14,11 @@ export default function (eleventyConfig, options = {}) {
         var link;
         var links = [];
         var match;
+        var resultStr = '';
         options = { ...defaultConfig, ...options };
         if (options.debugMode) {
             console.log('Options');
             console.table(options);
-        }
-        if (options.collapsible && !options.sectionTitle) {
-            return `[${APP_NAME}] When using 'collapsible' option, you must also provide a 'sectionTitle' option.`;
         }
         content = this.page.rawInput;
         while ((match = regex.exec(content)) !== null) {
@@ -33,6 +31,8 @@ export default function (eleventyConfig, options = {}) {
         if (options.debugMode && links.length > 0) {
             console.dir(links);
         }
-        return "<< Post Links Section >>";
+        if (links.length < options.minimumLinks) {
+        }
+        return resultStr;
     });
 }

@@ -35,7 +35,7 @@ const defaultConfig: ModuleOptions = {
   // 'contentScope': 'PostLinksScope',
 }
 
-// const APP_NAME = 'Eleventy-Plugin-Markdown-Post-Links';
+// const APP_NAME = 'Eleventy-Plugin-Markdown-Page-Links';
 const regex = /\!*\[([^\]]+)\]\(([^)]+)\)/g;
 
 export default function (eleventyConfig: UserConfig, options: ModuleOptions = {}) {
@@ -68,7 +68,7 @@ export default function (eleventyConfig: UserConfig, options: ModuleOptions = {}
       console.dir(links);
     }
 
-    // Do we have at least the miniumum number of links?
+    // Do we have at least the minimum number of links?
     if (links.length < options.minimumLinks!) {
       // Then build the link list
       

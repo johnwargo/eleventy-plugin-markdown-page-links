@@ -1,10 +1,10 @@
 {
-  "name": "eleventy-plugin-markdown-post-links",
+  "name": "eleventy-plugin-markdown-page-links",
   "version": "0.0.1",
   "description": "An Eleventy plugin to generate a post links section in a post or page.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnwargo/eleventy-plugin-markdown-post-links.git"
+    "url": "git+https://github.com/johnwargo/eleventy-plugin-markdown-page-links.git"
   },
   "keywords": [],
   "author": "John M. Wargo",
@@ -16,9 +16,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bugs": {
-    "url": "https://github.com/johnwargo/eleventy-plugin-markdown-post-links/issues"
+    "url": "https://github.com/johnwargo/eleventy-plugin-markdown-page-links/issues"
   },
-  "homepage": "https://github.com/johnwargo/eleventy-plugin-markdown-post-links#readme",
+  "homepage": "https://github.com/johnwargo/eleventy-plugin-markdown-page-links#readme",
   "dependencies": {
     "@11ty/eleventy": "^3.1.2"
   },
