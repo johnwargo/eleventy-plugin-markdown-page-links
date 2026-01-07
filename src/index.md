@@ -7,9 +7,9 @@ This [11ty](https://www.11ty.dev/) (Eleventy) plugin adds a **Links** section to
 
 To use this plugin, within the page content, add the following shortcode where you want the links to appear:
 
-{% highlight liquid %}
-{% postLinks %}
-{% endhighlight %}
+<code>
+&#123;% postLinks %&#125;
+</code>
 
 With that in place, the plugin will automatically generate a list of links that looks like the following:
 
