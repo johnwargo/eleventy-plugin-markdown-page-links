@@ -1,6 +1,5 @@
 ---
-title: Tried Babbling Stricken Parmesan
-tags: post
+title: Example 3
 permalink: /posts/3/
 ---
 

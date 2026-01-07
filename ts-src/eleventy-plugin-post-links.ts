@@ -7,6 +7,7 @@
 
 type ModuleOptions = {
   debugMode?: boolean,
+  orderedList?: boolean,
   useSection?: boolean,
   sectionTitle?: string
 }
