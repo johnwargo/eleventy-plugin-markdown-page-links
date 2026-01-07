@@ -1,6 +1,5 @@
 const defaultConfig = {
     'collapsible': false,
-    'contentScope': 'PostLinksScope',
     'externalLinksOnly': false,
     'minimumLinks': 0,
     'openInNewTab': true,
@@ -8,10 +7,13 @@ const defaultConfig = {
     'sectionTitle': 'Links',
     'debugMode': true
 };
-const APP_NAME = 'Eleventy-Plugin-Post-Links';
 const regex = /\!*\[([^\]]+)\]\(([^)]+)\)/g;
 export default function (eleventyConfig, options = {}) {
     eleventyConfig.addShortcode("postLinks", function () {
+        var content;
+        var link;
+        var links = [];
+        var match;
         options = { ...defaultConfig, ...options };
         if (options.debugMode) {
             console.log('Options');
@@ -20,10 +22,7 @@ export default function (eleventyConfig, options = {}) {
         if (options.collapsible && !options.sectionTitle) {
             return `[${APP_NAME}] When using 'collapsible' option, you must also provide a 'sectionTitle' option.`;
         }
-        var links = [];
-        var link;
-        let content = this.page.rawInput;
-        let match;
+        content = this.page.rawInput;
         while ((match = regex.exec(content)) !== null) {
             link = {
                 title: match[1],
@@ -31,7 +30,7 @@ export default function (eleventyConfig, options = {}) {
             };
             links.push(link);
         }
-        if (links.length > 0) {
+        if (options.debugMode && links.length > 0) {
             console.dir(links);
         }
         return "<< Post Links Section >>";

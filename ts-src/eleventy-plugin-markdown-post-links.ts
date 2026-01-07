@@ -14,7 +14,7 @@ type LinkRecord = {
 
 type ModuleOptions = {
   collapsible?: boolean,
-  contentScope?: string,
+  // contentScope?: string,
   externalLinksOnly?: boolean,
   minimumLinks?: number,
   openInNewTab?: boolean,
@@ -25,21 +25,28 @@ type ModuleOptions = {
 
 const defaultConfig: ModuleOptions = {
   'collapsible': false,
-  'contentScope': 'PostLinksScope',
   'externalLinksOnly': false,
   'minimumLinks': 0,
   'openInNewTab': true,
   'orderedList': false,
   'sectionTitle': 'Links',
   'debugMode': true
+  // Can't do this since we don't have access to the page's HTML content
+  // 'contentScope': 'PostLinksScope',
 }
 
-const APP_NAME = 'Eleventy-Plugin-Post-Links';
+// const APP_NAME = 'Eleventy-Plugin-Markdown-Post-Links';
 const regex = /\!*\[([^\]]+)\]\(([^)]+)\)/g;
 
 export default function (eleventyConfig: UserConfig, options: ModuleOptions = {}) {
 
   eleventyConfig.addShortcode("postLinks", function () {
+
+    var content: string;
+    var link: LinkRecord;
+    var links: LinkRecord[] = [];
+    var match;
+    var resultStr: string = '';
 
     // Merge the user options with the default config
     options = { ...defaultConfig, ...options };
@@ -48,16 +55,8 @@ export default function (eleventyConfig: UserConfig, options: ModuleOptions = {}
       console.table(options);
     }
 
-    if (options.collapsible && !options.sectionTitle) {
-      return `[${APP_NAME}] When using 'collapsible' option, you must also provide a 'sectionTitle' option.`;
-    }
-
-    var links: LinkRecord[] = [];
-    var link: LinkRecord;
-
     //@ts-ignore
-    let content = this.page.rawInput;
-    let match;
+    content = this.page.rawInput;
     while ((match = regex.exec(content)) !== null) {
       link = {
         title: match[1],
@@ -65,12 +64,17 @@ export default function (eleventyConfig: UserConfig, options: ModuleOptions = {}
       };
       links.push(link);
     }
-
-    if (links.length > 0 ){
+    if (options.debugMode && links.length > 0) {
       console.dir(links);
     }
 
-    return "<< Post Links Section >>";
+    // Do we have at least the miniumum number of links?
+    if (links.length < options.minimumLinks!) {
+      // Then build the link list
+      
+
+    }
+    return resultStr;
   });
 
 }
