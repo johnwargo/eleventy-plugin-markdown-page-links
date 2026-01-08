@@ -64,7 +64,7 @@ export default function (eleventyConfig: UserConfig, options: ModuleOptions = {}
     console.table(options);
   }
 
-  eleventyConfig.addShortcode("postLinks", function (listType?: ListType, minimumLinks?: number, openInNewTab?: boolean, externalLinksOnly?: boolean, listClass?: string, collapsible?: boolean, sectionTitle?: string, debugMode?: boolean) {
+  eleventyConfig.addShortcode("pageLinks", function (listType?: ListType, minimumLinks?: number, openInNewTab?: boolean, externalLinksOnly?: boolean, listClass?: string, collapsible?: boolean, sectionTitle?: string, debugMode?: boolean) {
 
     var content: string;
     var link: LinkRecord;

@@ -33,7 +33,7 @@ export default function (eleventyConfig, options = {}) {
         console.log('Options');
         console.table(options);
     }
-    eleventyConfig.addShortcode("postLinks", function (listType, minimumLinks, openInNewTab, externalLinksOnly, listClass, collapsible, sectionTitle, debugMode) {
+    eleventyConfig.addShortcode("pageLinks", function (listType, minimumLinks, openInNewTab, externalLinksOnly, listClass, collapsible, sectionTitle, debugMode) {
         var content;
         var link;
         var links = [];

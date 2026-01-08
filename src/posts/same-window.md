@@ -1,10 +1,10 @@
 ---
-title: Unordered List
+title: Same Window
 ---
 
 Bacon ipsum dolor amet picanha filet mignon beef ribs swine tongue kielbasa. Prosciutto fatback swine shank pork chop tongue ball tip frankfurter turkey pork belly biltong. Frankfurter kielbasa landjaeger, meatloaf bresaola swine venison ball tip shankle drumstick fatback pastrami pork belly porchetta. [Long Doge Challenge](https://longdogechallenge.com/) Hamburger ribeye flank brisket burgdoggen cow andouille biltong meatloaf bacon pastrami salami chislic kielbasa. Shank pork belly burgdoggen, cupim shoulder t-bone chicken turducken kielbasa porchetta. Picanha boudin ham hock, shank tail alcatra frankfurter jerky beef ribs filet mignon rump leberkas pancetta short loin prosciutto.
 
-{% pageLinks 2 5 %}
+{% pageLinks 1, 0, true, true, "", true %}
 
 Filet mignon andouille pig meatloaf shankle buffalo strip steak venison ham hock doner chicken pork. Tail alcatra brisket leberkas capicola shoulder chicken short ribs bacon pork chop pastrami rump bresaola boudin buffalo. Pancetta chislic doner pork chop tail. Sausage pig tri-tip bresaola hamburger [Pug In A Rug](https://puginarug.com/) turducken capicola flank spare ribs turkey leberkas. T-bone short loin pork, picanha flank rump pork loin pancetta shoulder bacon alcatra doner.
 
