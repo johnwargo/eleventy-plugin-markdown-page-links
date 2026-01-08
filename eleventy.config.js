@@ -1,4 +1,11 @@
-import { debug } from 'console';
+/***********************************************
+ * Demonstration site for the 
+ * Eleventy Plugin Markdown Page Links plugin
+ * 
+ * By John M. Wargo
+ * https://johnwargo.com
+ ***********************************************/
+
 import postLinksPlugin from './eleventy-plugin-markdown-page-links.js';
 
 export default async function (eleventyConfig) {
