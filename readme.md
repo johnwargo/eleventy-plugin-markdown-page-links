@@ -13,10 +13,9 @@ Options:
 ## Tasks
 
 - [ ] Publish on Netlify
-- [x] Netlify link in footer
 - [ ] Add Netlify link to repo link and readme
+- [ ] Better navigation for sample pages
 - [ ] Omit duplicate links in output
-- [ ] 
 - [ ] 
 - [ ] 
 - [ ] 
