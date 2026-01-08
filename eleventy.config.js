@@ -11,7 +11,7 @@ import postLinksPlugin from './eleventy-plugin-markdown-page-links.js';
 export default async function (eleventyConfig) {
 
 	// this plugin
-	eleventyConfig.addPlugin(postLinksPlugin, { openInNewTab: true });
+	eleventyConfig.addPlugin(postLinksPlugin, { openInNewTab: false, collapsible: true });
 
 	eleventyConfig.addPassthroughCopy("src/assets/");
 

@@ -16,18 +16,15 @@ const defaultConfig = {
 };
 const PLUGIN_NAME = 'Eleventy-Plugin-Markdown-Page-Links';
 const regex = /\!*\[([^\]]+)\]\(([^)]+)\)/g;
-function buildLinkList(links, delimiter, newWindow, collapsible, sectionTitle) {
-    console.log(`Building link list with delimiter: ${delimiter}, newWindow: ${newWindow}`);
+function buildLinkList(links, delimiter, newWindow, debugMode) {
+    if (debugMode)
+        console.log(`Building link list with delimiter: ${delimiter}, newWindow: ${newWindow}`);
     var resultStr = '';
-    if (collapsible) {
-        resultStr += `<details>\n<summary>${sectionTitle}</summary>\n`;
-    }
     links.forEach((link) => {
+        if (debugMode)
+            console.dir(link);
         resultStr += `<${delimiter}><a href="${link.url}"${newWindow ? ' target="_blank" rel="noopener noreferrer"' : ''}>${link.title}</a></${delimiter}>\n`;
     });
-    if (collapsible) {
-        resultStr += `</details>\n`;
-    }
     return resultStr;
 }
 export default function (eleventyConfig, options = {}) {
@@ -66,25 +63,34 @@ export default function (eleventyConfig, options = {}) {
         }
         resultStr = '';
         if (links.length >= minimumLinks) {
+            if (collapsible) {
+                resultStr += `<details>\n<summary>${sectionTitle}</summary>\n`;
+            }
             switch (listType) {
                 case ListType.Ordered:
-                    console.log('Building ordered list');
-                    resultStr = `<ol${listClass ? ` class="${listClass}"` : ''}>\n`;
-                    resultStr += buildLinkList(links, 'li', openInNewTab, collapsible, sectionTitle);
+                    if (debugMode)
+                        console.log(`${PLUGIN_NAME} Building ordered list`);
+                    resultStr += `<ol${listClass ? ` class="${listClass}"` : ''}>\n`;
+                    resultStr += buildLinkList(links, 'li', openInNewTab, debugMode);
                     resultStr += '</ol>\n';
                     break;
                 case ListType.Unordered:
-                    console.log('Building unordered list');
-                    resultStr = `<ul${listClass ? ` class="${listClass}"` : ''}>\n`;
-                    resultStr += buildLinkList(links, 'li', openInNewTab, collapsible, sectionTitle);
+                    if (debugMode)
+                        console.log(`${PLUGIN_NAME} Building unordered list`);
+                    resultStr += `<ul${listClass ? ` class="${listClass}"` : ''}>\n`;
+                    resultStr += buildLinkList(links, 'li', openInNewTab, debugMode);
                     resultStr += '</ul>\n';
                     break;
                 default:
-                    console.log('Building div link list');
-                    resultStr = `<div${listClass ? ` class="${listClass}"` : ''}>\n`;
-                    resultStr += buildLinkList(links, 'p', openInNewTab, collapsible, sectionTitle);
+                    if (debugMode)
+                        console.log(`${PLUGIN_NAME} Building div link list`);
+                    resultStr += `<div${listClass ? ` class="${listClass}"` : ''}>\n`;
+                    resultStr += buildLinkList(links, 'p', openInNewTab, debugMode);
                     resultStr += '</div>\n';
                     break;
+            }
+            if (collapsible) {
+                resultStr += `</details>\n`;
             }
         }
         if (debugMode)
