@@ -11,8 +11,15 @@ To use this plugin, within the page content, add the following shortcode where y
 &#123;% postLinks %&#125;
 </code>
 
-With that in place, the plugin will automatically generate a list of links that looks like the following:
+With that in place, the plugin will automatically generate a list of links at that location on the page. Check out these example pages demonstrating different usage options for the plugin:
 
-![Links Section example](/assets/images/image-01.png)
-
-Use the example links above to see the different ways to invoke the shortcode.
+| Example                        | Description |
+| ------------------------------ | ----------- |
+| [Simple](/posts/simple/)       | A simple text-based list of links |
+| [Ordered](/posts/ordered/)     | Displays an ordered lists of links |
+| [Unordered](/posts/unordered/) | Displays an unordered list of links |
+| | |
+| | |
+| | |
+| | |
+| | |

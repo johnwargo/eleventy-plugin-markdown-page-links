@@ -21,12 +21,11 @@ function buildLinkList(links, delimiter, newWindow = false) {
     var resultStr = '';
     links.forEach((link) => {
         console.dir(link);
-        resultStr += `<${delimiter}><a href="${link.url}"${newWindow ? ' target="_blank" rel="noopener noreferrer"' : ''}>${link.title}</a></${delimiter}>\n`;
+        resultStr += `<${delimiter}><a href="${link.url}"${newWindow ? ' target="_blank" rel="noopener noreferrer"' : ''}>${link.title}</a></${delimiter}>`;
     });
     return resultStr;
 }
 export default function (eleventyConfig) {
-    eleventyConfig.addFilter('jsonParse', JSON.parse);
     eleventyConfig.addShortcode("postLinks", function (options = {}) {
         var content;
         var link;

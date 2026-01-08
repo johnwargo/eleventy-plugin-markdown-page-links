@@ -49,7 +49,7 @@ function buildLinkList(links: LinkRecord[], delimiter: string, newWindow: boolea
   var resultStr = '';
   links.forEach((link) => {
     console.dir(link);
-    resultStr += `<${delimiter}><a href="${link.url}"${newWindow ? ' target="_blank" rel="noopener noreferrer"' : ''}>${link.title}</a></${delimiter}>\n`;
+    resultStr += `<${delimiter}><a href="${link.url}"${newWindow ? ' target="_blank" rel="noopener noreferrer"' : ''}>${link.title}</a></${delimiter}>`;
   });
   return resultStr;
 }

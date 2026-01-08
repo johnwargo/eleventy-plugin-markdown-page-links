@@ -1,6 +1,5 @@
 ---
 title: Unordered List
-permalink: /posts/2/
 ---
 
 Bacon ipsum dolor amet picanha filet mignon beef ribs swine tongue kielbasa. Prosciutto fatback swine shank pork chop tongue ball tip frankfurter turkey pork belly biltong. Frankfurter kielbasa landjaeger, meatloaf bresaola swine venison ball tip shankle drumstick fatback pastrami pork belly porchetta. [Long Doge Challenge](https://longdogechallenge.com/) Hamburger ribeye flank brisket burgdoggen cow andouille biltong meatloaf bacon pastrami salami chislic kielbasa. Shank pork belly burgdoggen, cupim shoulder t-bone chicken turducken kielbasa porchetta. Picanha boudin ham hock, shank tail alcatra frankfurter jerky beef ribs filet mignon rump leberkas pancetta short loin prosciutto.
