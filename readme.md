@@ -14,9 +14,21 @@ Options:
 
 - [ ] Publish on Netlify
 - [x] Netlify link in footer
+- [ ] Add Netlify link to repo link and readme
 - [ ] Omit duplicate links in output
 - [ ] 
 - [ ] 
 - [ ] 
 - [ ] 
 
+## Configuration Options
+
+| Option              | Description | 
+| ------------------- | ----------- |
+| `collapsible`       | Default: `false` |
+| `externalLinksOnly` | Default: `false` |
+| `listClass`         | Default: '' |
+| `listType`          | Default: 0     Supported options are `0` {Simple), `1` (Ordered), `2` (Unordered) |
+| `minimumLinks`      | Default: 0 |
+| `openInNewTab`      | Default: `true` |
+| `sectionTitle`      | Default: 'Links' |

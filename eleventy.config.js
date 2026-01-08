@@ -1,4 +1,4 @@
-import postLinksPlugin from './eleventy-plugin-post-links.js';
+import postLinksPlugin from './eleventy-plugin-markdown-page-links.js';
 
 export default async function (eleventyConfig) {
 
