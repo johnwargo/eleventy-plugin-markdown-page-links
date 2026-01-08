@@ -1,6 +1,15 @@
 # Eleventy Plugin Markdown Post Links
 
-> Work in Progress, nothing to see here
+## Tasks
+
+- [ ] Better navigation between sample pages
+- [ ] Omit duplicate links in output
+- [ ] Update readme
+- [ ] Write blog post
+- [ ] Share on social media
+- [ ] 
+
+## About
 
 Options:
 
@@ -10,17 +19,9 @@ Options:
 + Open in new tab (`_blank`)
 
 
-## Tasks
+## Operation
 
-- [ ] Publish on Netlify
-- [ ] Add Netlify link to repo link and readme
-- [ ] Better navigation for sample pages
-- [ ] Omit duplicate links in output
-- [ ] 
-- [ ] 
-- [ ] 
-
-## Configuration Options
+### Configuration Options
 
 | Option              | Description | 
 | ------------------- | ----------- |
