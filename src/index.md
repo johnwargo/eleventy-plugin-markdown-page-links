@@ -11,7 +11,9 @@ To use this plugin, within the page content, add the following shortcode where y
 &#123;% pageLinks %&#125;
 </code>
 
-With that in place, the plugin will automatically generate a list of links at that location on the page. Check out these example pages demonstrating different usage options for the plugin (also accessible from the site's main menu):
+With that in place, the plugin automatically generates a list of links at that location on the page. You can set global configuration options that apply to the generated links on every page. You can also override the default settings through parameters passed to the shortcode.
+
+Use the menu at the top of the page or the links below to see examples of the different options for the plugin:
 
 | Example                            | Description |
 | ---------------------------------- | ----------- |

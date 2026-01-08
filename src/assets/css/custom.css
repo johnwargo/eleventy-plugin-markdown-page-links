@@ -16,6 +16,10 @@ footer hr {
   margin-bottom: 0;
 }
 
+body td {  
+  text-align: left;
+}
+
 .page-links ol {
    list-style: none;
    width: 12rem;
