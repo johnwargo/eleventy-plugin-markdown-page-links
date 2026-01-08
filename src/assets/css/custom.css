@@ -15,3 +15,28 @@ body main, body footer {
 footer hr {
   margin-bottom: 0;
 }
+
+.page-links ol {
+   list-style: none;
+   width: 12rem;
+  margin-top: 1.6rem;
+}
+.page-links li {
+   border-bottom: 1pt solid #ddd;
+   padding-bottom: 1rem;
+   margin-bottom: 0.6rem;
+}
+.page-links li:last-of-type {
+   border-bottom: none;
+   margin-bottom: 0;
+}
+.page-links a {
+   text-decoration: none;
+   font-weight: 400;
+   color: #999;
+}
+.page-links a:hover {
+   color: var(--color-link);
+   font-weight: bold;
+   text-decoration: underline;
+}
