@@ -13,13 +13,14 @@ To use this plugin, within the page content, add the following shortcode where y
 
 With that in place, the plugin will automatically generate a list of links at that location on the page. Check out these example pages demonstrating different usage options for the plugin:
 
-| Example                        | Description |
-| ------------------------------ | ----------- |
-| [Simple](/posts/simple/)       | A simple text-based list of links |
-| [Ordered](/posts/ordered/)     | Displays an ordered lists of links |
-| [Unordered](/posts/unordered/) | Displays an unordered list of links |
-| | |
-| | |
-| | |
-| | |
-| | |
+| Example                            | Description |
+| ---------------------------------- | ----------- |
+| [Simple](/posts/simple/)           | A simple text-based list of links |
+| [Ordered](/posts/ordered/)         | Displays an ordered lists of links |
+| [Unordered](/posts/unordered/)     | Displays an unordered list of links |
+| [Collapsible](/posts/collapsible/) | Displays the links in a collapsible section |
+| []() | |
+| []() | |
+| []() | |
+| []() | |
+| []() | |

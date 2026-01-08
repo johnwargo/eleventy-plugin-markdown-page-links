@@ -8,7 +8,7 @@
 //@ts-ignore
 import { UserConfig } from '@11ty/eleventy';
 
-enum LinkType {
+enum ListType {
   Simple,      // 0
   Ordered,     // 1
   Unordered,   // 2
@@ -24,14 +24,14 @@ type ModuleOptions = {
   collapsible?: boolean,
   externalLinksOnly?: boolean,
   listClass?: string,
-  listType?: LinkType,
+  listType?: ListType,
   minimumLinks?: number,
   openInNewTab?: boolean,
   sectionTitle?: string,
 }
 
 const defaultConfig: ModuleOptions = {
-  'debugMode': true,
+  'debugMode': false,
   'collapsible': false,
   'externalLinksOnly': false,
   'listClass': '',
@@ -44,19 +44,32 @@ const defaultConfig: ModuleOptions = {
 const PLUGIN_NAME = 'Eleventy-Plugin-Markdown-Page-Links';
 const regex = /\!*\[([^\]]+)\]\(([^)]+)\)/g;
 
-function buildLinkList(links: LinkRecord[], delimiter: string, newWindow: boolean = false): string {
+function buildLinkList(links: LinkRecord[], delimiter: string, newWindow: boolean, collapsible: boolean, sectionTitle: string): string {
   console.log(`Building link list with delimiter: ${delimiter}, newWindow: ${newWindow}`);
   var resultStr = '';
+  if (collapsible) {
+    resultStr += `<details>\n<summary>${sectionTitle}</summary>\n`;
+  }
   links.forEach((link) => {
-    console.dir(link);
-    resultStr += `<${delimiter}><a href="${link.url}"${newWindow ? ' target="_blank" rel="noopener noreferrer"' : ''}>${link.title}</a></${delimiter}>`;
+    // console.dir(link);
+    resultStr += `<${delimiter}><a href="${link.url}"${newWindow ? ' target="_blank" rel="noopener noreferrer"' : ''}>${link.title}</a></${delimiter}>\n`;
   });
+  if (collapsible) {
+    resultStr += `</details>\n`;
+  }
   return resultStr;
 }
 
-export default function (eleventyConfig: UserConfig ) {
+export default function (eleventyConfig: UserConfig, options: ModuleOptions = {}) {
 
-  eleventyConfig.addShortcode("postLinks", function (options: ModuleOptions = {}) {
+  // Merge the user options with the default config
+  options = { ...defaultConfig, ...options };
+  if (options.debugMode) {
+    console.log('Options');
+    console.table(options);
+  }
+
+  eleventyConfig.addShortcode("postLinks", function (listType?: ListType, minimumLinks?: number, openInNewTab?: boolean, externalLinksOnly?: boolean, listClass?: string, collapsible?: boolean, sectionTitle?: string, debugMode?: boolean) {
 
     var content: string;
     var link: LinkRecord;
@@ -64,20 +77,22 @@ export default function (eleventyConfig: UserConfig ) {
     var match;
     var resultStr: string;
 
+    // Replace undefined options with those from the module config
+    listType = listType ?? options.listType;
+    minimumLinks = minimumLinks ?? options.minimumLinks;
+    openInNewTab = openInNewTab ?? options.openInNewTab;
+    externalLinksOnly = externalLinksOnly ?? options.externalLinksOnly;
+    listClass = listClass ?? options.listClass;
+    collapsible = collapsible ?? options.collapsible;
+    sectionTitle = sectionTitle ?? options.sectionTitle;
+    debugMode = debugMode ?? options.debugMode;
+
     // check the passed-in config options
-    if (options.listType! < 0 || options.listType! > 2) {
-      return `${PLUGIN_NAME} Error: Invalid list type specified (${options.listType}).`;
+    if (listType! < 0 || listType! > 2) {
+      return `${PLUGIN_NAME} Error: Invalid list type specified (${listType}).`;
     }
 
-    // Merge the user options with the default config
-    options = { ...defaultConfig, ...options };
-    if (options.debugMode) {
-      console.log('Options');
-      console.table(options);
-    }
-
-    resultStr = '';
-
+    // get the page content and extract the links
     //@ts-ignore
     content = this.page.rawInput;
     while ((match = regex.exec(content)) !== null) {
@@ -87,35 +102,36 @@ export default function (eleventyConfig: UserConfig ) {
       };
       links.push(link);
     }
-    if (options.debugMode && links.length > 0) {
+    if (debugMode && links.length > 0) {
       console.dir(links);
     }
 
+    resultStr = '';
     // Do we have at least the minimum number of links?
-    if (links.length >= options.minimumLinks!) {
+    if (links.length >= minimumLinks!) {
       // Then build the link list
-      switch (options.listType) {
-        case LinkType.Ordered:
+      switch (listType) {
+        case ListType.Ordered:
           console.log('Building ordered list');
-          resultStr = `<ol${options.listClass ? ` class="${options.listClass}"` : ''}>\n`;
-          resultStr += buildLinkList(links, 'li', options.openInNewTab!);
+          resultStr = `<ol${listClass ? ` class="${listClass}"` : ''}>\n`;
+          resultStr += buildLinkList(links, 'li', openInNewTab!, collapsible!, sectionTitle!);
           resultStr += '</ol>\n';
           break;
-        case LinkType.Unordered:
+        case ListType.Unordered:
           console.log('Building unordered list');
-          resultStr = `<ul${options.listClass ? ` class="${options.listClass}"` : ''}>\n`;
-          resultStr += buildLinkList(links, 'li', options.openInNewTab!);
+          resultStr = `<ul${listClass ? ` class="${listClass}"` : ''}>\n`;
+          resultStr += buildLinkList(links, 'li', openInNewTab!, collapsible!, sectionTitle!);
           resultStr += '</ul>\n';
           break;
         default:
           console.log('Building div link list');
-          resultStr = `<div${options.listClass ? ` class="${options.listClass}"` : ''}>\n`;
-          resultStr += buildLinkList(links, 'p', options.openInNewTab!);
+          resultStr = `<div${listClass ? ` class="${listClass}"` : ''}>\n`;
+          resultStr += buildLinkList(links, 'p', openInNewTab!, collapsible!, sectionTitle!);
           resultStr += '</div>\n';
           break;
       }
     }
-    if (options.debugMode) console.dir(resultStr);
+    if (debugMode) console.dir(resultStr);
     return resultStr;
   });
 
