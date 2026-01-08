@@ -17,9 +17,9 @@ Use the menu at the top of the page or the links below to see examples of the di
 
 | Example                            | Description |
 | ---------------------------------- | ----------- |
-| [Simple](/posts/simple/)           | A simple text-based (`<p></p>`) list of links. |
-| [Ordered](/posts/ordered/)         | Displays an ordered list (`<ul></ul>`) of links. |
-| [Unordered](/posts/unordered/)     | Displays an unordered list (`<ol></ol>`) of links. |
+| [Simple](/posts/simple/)           | A simple text-based (`<p>` `</p>`) list of links. |
+| [Ordered](/posts/ordered/)         | Displays an ordered list (`<ul>` `</ul>`) of links. |
+| [Unordered](/posts/unordered/)     | Displays an unordered list (`<ol>` `</ol>`) of links. |
 | [Collapsible](/posts/collapsible/) | Displays the links in a collapsible section using the `<details>` and `<summary>` tags. |
 | [Same Window](/posts/same-window/) | Links open in the same window (the plugin's configured to open in a new window by default). |
 | [Styled](/posts/styled/)| Adds a custom CSS class to the generated output. |
