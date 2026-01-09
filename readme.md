@@ -76,6 +76,7 @@ List Options:
 + **Collapsible list** - Link list and renders it in a collapsed section on the page using the `<details>` and `<summary>` tags.
 + **New Tab** - Links open in a new tab using `target="_blank"`.
 + **Styled List** - Allows you to apply a CSS class to the list container on the page.
++ **Minimum Links** - Only generate the link list when there's at least a specified number of links on the page.
 
 This repo includes a [sample app](https://mdpagelinks.netlify.app/) (hosted for free on [Netlify](https://www.netlify.com/)) that demonstrates all of these options. Check it out to learn more.
 
