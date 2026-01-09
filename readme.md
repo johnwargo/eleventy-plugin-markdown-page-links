@@ -82,7 +82,7 @@ This repo includes a [sample app](https://mdpagelinks.netlify.app/) (hosted for 
 
 ## Operation
 
-Add the shortcode `pageLinks` to a page or page template to generate a list of the page's links in that location.
+Add the shortcode `pageLinks` to a page or page template to generate a list of the page's links in that location. In this example, no list type is specified, so the plugin uses the default option of the simple list.
 
 ``` markdown
 Links on this page:
