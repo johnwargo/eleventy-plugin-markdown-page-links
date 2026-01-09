@@ -6,12 +6,12 @@
  * https://johnwargo.com
  ***********************************************/
 
-import postLinksPlugin from './eleventy-plugin-markdown-page-links.js';
+import pageLinks from './eleventy-plugin-markdown-page-links.js';
 
 export default async function (eleventyConfig) {
 
 	// this plugin
-	eleventyConfig.addPlugin(postLinksPlugin, { openInNewTab: true });
+	eleventyConfig.addPlugin(pageLinks, { openInNewTab: true });
 
 	eleventyConfig.addPassthroughCopy("src/assets/");
 
