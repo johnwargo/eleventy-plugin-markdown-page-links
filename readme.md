@@ -9,7 +9,16 @@
 - [ ] Share on social media
 - [ ] 
 
-## About
+---
+
+An [Eleventy](https://www.11ty.dev/) plugin that adds a shortcode to eleventy site that generates a list of links from a markdown page's content. 
+
+**Note:** Due to some technical limitations in Eleventy, shortcodes don't have access to rendered HTML content for the page. So, to implement this successfully, I had to look for links in pre-rendered content.  Since I primarily use markdown files for site content, I built the plugin to look for markdown anchor links.
+
+
+## Background
+
+
 
 Options:
 
