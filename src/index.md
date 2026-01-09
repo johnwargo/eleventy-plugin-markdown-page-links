@@ -28,5 +28,6 @@ The plugin supports the following options:
 + [Collapsible list](/posts/collapsible/) - Link list and renders it in a collapsed section on the page using the `<details>` and `<summary>` tags.
 + [Styled List](/posts/styled/) - Allows you to apply a CSS class to the list container on the page.
 + [Minimum Links](/posts/minimum/) - Only generate the link list when there's at least a specified number of links on the page.
++ [External Only](/posts/external-only) - Don't generate links for any internal (local) links.
 
 Use the menu at the top of the page see examples of each of the available options in action.
