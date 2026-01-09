@@ -32,7 +32,7 @@ In your project's eleventy.config.js file, import the package (at the top of the
 const pageLinks = require('eleventy-plugin-post-stats');
 ```
 
-And in the same file's module.exports section, along with all the other plugin statements you site uses, add the following addPlugin statement:
+And in the same file's module.exports section, along with all the other plugin statements you site uses, add the following `addPlugin` method:
 
 ``` ts
 module.exports = eleventyConfig => {
@@ -61,17 +61,17 @@ With that in place, your site now has a shortcode called `pageLinks` the site ca
 
 Posts in my [personal blog](https://johnwargo.com) often reference a lot of external links, and some of the longer posts have 10 or more links. I realized I could make it easier for readers if I listed all links in a group somewhere on the page. This isn't a critical feature for the site, but something I thought visitors might find useful.
 
-Add the shortcode to a page's template to have the links appear on every page, or place the shortcode at the top or bottom of a long article to generate links for just that page. The plugin supports a configuration option, `minimumLinks`, that instructs the shortcode to generate links only if there are a specific number of links on the page.
+Add the shortcode to a page's template to have the links appear on every page, or place the shortcode at the top or bottom of a long article to generate links for just that page. The plugin also supports a configuration option, `minimumLinks`, that instructs the shortcode to generate links only if there are a specific number of links on the page.
 
 The plugin supports the following options:
 
-List types:
+**List Types:**
 
 + **Simple list** - Generates a simple list of page links with each as a separate paragraph in the page.
 + **Ordered list** - Generates a list of page links as an ordered list using the `<ol>` and `</ol>` tags
 + **Unordered list** - Generates a list of page links as an ordered list using the `<ul>` and `</ul>` tags
 
-List Options:
+**List Options:**
 
 + **Collapsible list** - Link list and renders it in a collapsed section on the page using the `<details>` and `<summary>` tags.
 + **New Tab** - Links open in a new tab using `target="_blank"`.
@@ -89,7 +89,7 @@ Links on this page:
 
 {% pageLinks %}
 
-Bacon ipsum dolor amet picanha filet mignon beef ribs swine tongue kielbasa.  Prosciutto fatback swine shank pork chop tongue ball tip frankfurter turkey pork belly biltong.  Frankfurter kielbasa landjaeger, meatloaf bresaola swine venison ball tip shankle drumstick fatback pastrami pork belly porchetta.  [Long Doge Challenge](https://longdogechallenge.com/) Hamburger ribeye flank brisket burgdoggen cow andouille biltong meatloaf bacon pastrami salami chislic kielbasa.  Shank pork belly burgdoggen, cupim shoulder t-bone chicken turducken kielbasa porchetta.  Picanha boudin ham hock, shank tail alcatra frankfurter jerky beef ribs filet mignon rump leberkas pancetta short loin prosciutto.
+Bacon ipsum dolor amet picanha filet mignon beef ribs swine tongue kielbasa...
 ```
 
 This generates the following content on the page:
@@ -103,7 +103,7 @@ Links on this page:
 
 {% pageLinks 2 %}
 
-Bacon ipsum dolor amet picanha filet mignon beef ribs swine tongue kielbasa. Prosciutto fatback swine shank pork chop tongue ball tip frankfurter turkey pork belly biltong. Frankfurter kielbasa landjaeger, meatloaf bresaola swine venison ball tip shankle drumstick fatback pastrami pork belly porchetta. [Long Doge Challenge](https://longdogechallenge.com/) Hamburger ribeye flank brisket burgdoggen cow andouille biltong meatloaf bacon pastrami salami chislic kielbasa. Shank pork belly burgdoggen, cupim shoulder t-bone chicken turducken kielbasa porchetta. Picanha boudin ham hock, shank tail alcatra frankfurter jerky beef ribs filet mignon rump leberkas pancetta short loin prosciutto.
+Bacon ipsum dolor amet picanha filet mignon beef ribs swine tongue kielbasa...
 ```
 
 This generates the unordered list shown below:
@@ -112,7 +112,7 @@ This generates the unordered list shown below:
 
 You can also set global options for the shortcut when you load the plugin in your project's `eleventy.config.js` file. Simply add any supported configuration variable in an object to the `addPlugin` method invocation. This following example configures the plugin to open all links in a new browser tab/window/.
 
-```ts
+``` ts
 eleventyConfig.addPlugin(pageLinks, { openInNewTab: true });
 ```
 
