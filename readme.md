@@ -3,7 +3,7 @@
 ## Tasks
 
 - [x] Omit duplicate links in output
-- [ ] Implement external-only flag
+- [x] Implement external-only flag
 - [ ] Update readme
 - [ ] Publish package
 - [ ] Write blog post
