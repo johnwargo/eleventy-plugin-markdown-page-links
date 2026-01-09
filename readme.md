@@ -46,7 +46,7 @@ module.exports = eleventyConfig => {
 The complete file should look something like the following (but with your site's other stuff in it as well):
 
 ``` ts
-const pageLinksPlugin = require('./eleventy-plugin-markdown-page-links.js');
+const pageLinks = require('./eleventy-plugin-markdown-page-links.js');
 
 module.exports = eleventyConfig => {
 
