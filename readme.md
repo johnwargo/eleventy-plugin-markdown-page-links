@@ -78,21 +78,43 @@ List Options:
 + **Styled List** - Allows you to apply a CSS class to the list container on the page.
 + **Minimum Links** - Only generate the link list when there's at least a specified number of links on the page.
 
-This repo includes a [sample app](https://mdpagelinks.netlify.app/) (hosted for free on [Netlify](https://www.netlify.com/)) that demonstrates all of these options. Check it out to learn more.
+This repo includes a [sample app](https://mdpagelinks.netlify.app/) (hosted for free on [Netlify](https://www.netlify.com/)) that demonstrates all of these options; check it out to learn more.
 
 ## Operation
 
-Here's an example from the [sample app](https://mdpagelinks.netlify.app/) included with the plugin's source code:
+Add the shortcode `pageLinks` to a page or page template to generate a list of the page's links in that location.
+
+``` markdown
+Links on this page:
+
+{% pageLinks %}
+
+Bacon ipsum dolor amet picanha filet mignon beef ribs swine tongue kielbasa.  Prosciutto fatback swine shank pork chop tongue ball tip frankfurter turkey pork belly biltong.  Frankfurter kielbasa landjaeger, meatloaf bresaola swine venison ball tip shankle drumstick fatback pastrami pork belly porchetta.  [Long Doge Challenge](https://longdogechallenge.com/) Hamburger ribeye flank brisket burgdoggen cow andouille biltong meatloaf bacon pastrami salami chislic kielbasa.  Shank pork belly burgdoggen, cupim shoulder t-bone chicken turducken kielbasa porchetta.  Picanha boudin ham hock, shank tail alcatra frankfurter jerky beef ribs filet mignon rump leberkas pancetta short loin prosciutto.
+```
+
+This generates the following content on the page:
 
 ![Sample links list](/images/image-01.png)
 
-You can also set global options for the shortcut when you load the plugin in your project's `eleventy.config.js` file. Simply add any supported configuration variable in an object to the `addPlugin` method invocation. 
+Specify a different list type (such as unordered list: 2) by specifying the list type as a parameter to the shortcode:
+
+``` markdown
+Links on this page:
+
+{% pageLinks 2 %}
+
+Bacon ipsum dolor amet picanha filet mignon beef ribs swine tongue kielbasa. Prosciutto fatback swine shank pork chop tongue ball tip frankfurter turkey pork belly biltong. Frankfurter kielbasa landjaeger, meatloaf bresaola swine venison ball tip shankle drumstick fatback pastrami pork belly porchetta. [Long Doge Challenge](https://longdogechallenge.com/) Hamburger ribeye flank brisket burgdoggen cow andouille biltong meatloaf bacon pastrami salami chislic kielbasa. Shank pork belly burgdoggen, cupim shoulder t-bone chicken turducken kielbasa porchetta. Picanha boudin ham hock, shank tail alcatra frankfurter jerky beef ribs filet mignon rump leberkas pancetta short loin prosciutto.
+```
+
+This generates the unordered list shown below:
+
+![Sample links list](/images/image-02.png)
+
+You can also set global options for the shortcut when you load the plugin in your project's `eleventy.config.js` file. Simply add any supported configuration variable in an object to the `addPlugin` method invocation. This following example configures the plugin to open all links in a new browser tab/window/.
 
 ```ts
 eleventyConfig.addPlugin(pageLinks, { openInNewTab: true });
 ```
-
-This example configured the plugin to open all links in a new browser tab/window/.
 
 ### Configuration Options
 
