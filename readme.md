@@ -57,36 +57,32 @@ module.exports = eleventyConfig => {
 
 With that in place, your site now has a shortcode called `pageLinks` the site can use to generate a list of links from the current page.
 
-Here's an example from the [sample app](https://mdpagelinks.netlify.app/) included with the plugin's source code:
-
-![Sample links list](/images/image-01.png)
-
-
-```ts
-eleventyConfig.addPlugin(pageLinks, { openInNewTab: true });
-```
-
-
 ## Background
 
 Posts in my [personal blog](https://johnwargo.com) often reference a lot of external links, and some of the longer posts have 10 or more links. I realized I could make it easier for readers if I listed all links in a group somewhere on the page. This isn't a critical feature for the site, but something I thought visitors might find useful.
 
 Add the shortcode to a page's template to have the links appear on every page, or place the shortcode at the top or bottom of a long article to generate links for just that page. The plugin supports a configuration option, `minimumLinks`, that instructs the shortcode to generate links only if there are a specific number of links on the page.
 
+The plugin supports the following link list options:
 
-
-Options:
-
-+ Simple list
-+ Collapsible list
++ Simple list - Generates a simple list of page links with each as a separate paragraph in the page.
++ Collapsible list- Generates a list of page links and renders it in a collapsed section on the page using the `<details>` and `<summary>` tags
 + Unordered (ul) or unordered (ol) List-o-links (`orderedList`)
 + Open in new tab (`_blank`)
 
 
-https://mdpagelinks.netlify.app/
-
-
 ## Operation
+
+
+Here's an example from the [sample app](https://mdpagelinks.netlify.app/) included with the plugin's source code:
+
+![Sample links list](/images/image-01.png)
+
+You can also set global options for the shortcut when you load the plugin in your project's `eleventy.config.js` file. Simply add a configuration object to the `addPlugin` method invocation. 
+
+```ts
+eleventyConfig.addPlugin(pageLinks, { openInNewTab: true });
+```
 
 ### Configuration Options
 
