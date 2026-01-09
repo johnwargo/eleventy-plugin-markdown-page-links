@@ -2,8 +2,8 @@
 
 ## Tasks
 
-- [ ] Better navigation between sample pages
 - [ ] Omit duplicate links in output
+- [ ] Implement external-only flag
 - [ ] Update readme
 - [ ] Write blog post
 - [ ] Share on social media
