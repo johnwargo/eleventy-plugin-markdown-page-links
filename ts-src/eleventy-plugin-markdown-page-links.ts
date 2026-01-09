@@ -95,6 +95,14 @@ export default function (eleventyConfig: UserConfig, options: ModuleOptions = {}
         title: match[1].trim(),
         url: match[2].trim()
       };
+
+      // if externalLinksOnly is set, skip internal links
+      //@ts-ignore
+      if (externalLinksOnly && (link.url.startsWith('/') || link.url.startsWith('#') || link.url.startsWith(this.page.url))) {
+        if (debugMode) console.log(`${PLUGIN_NAME} Skipping internal link: ${link.url}`);
+        continue;
+      }
+
       // is the link already in links?
       if (links.findIndex(l => l.url === link.url) !== -1) {
         if (debugMode) console.log(`${PLUGIN_NAME} Duplicate link found, skipping: ${link.url}`);
