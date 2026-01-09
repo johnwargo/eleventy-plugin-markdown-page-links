@@ -73,9 +73,9 @@ List types:
 
 List Options:
 
-+ Collapsible list: Link list and renders it in a collapsed section on the page using the `<details>` and `<summary>` tags.
-+ New Tab: Links open in a new tab using `target=_blank`.
-+ Styled List: Allows you to apply a CSS class to the list container on the page.
++ **Collapsible list** - Link list and renders it in a collapsed section on the page using the `<details>` and `<summary>` tags.
++ **New Tab** - Links open in a new tab using `target=_blank`.
++ **Styled List** - Allows you to apply a CSS class to the list container on the page.
 
 This repo includes a [sample app](https://mdpagelinks.netlify.app/) (hosted for free on [Netlify](https://www.netlify.com/)) that demonstrates all of these options. Check it out to learn more.
 
@@ -86,11 +86,13 @@ Here's an example from the [sample app](https://mdpagelinks.netlify.app/) includ
 
 ![Sample links list](/images/image-01.png)
 
-You can also set global options for the shortcut when you load the plugin in your project's `eleventy.config.js` file. Simply add a configuration object to the `addPlugin` method invocation. 
+You can also set global options for the shortcut when you load the plugin in your project's `eleventy.config.js` file. Simply add any supported configuration variable in an object to the `addPlugin` method invocation. 
 
 ```ts
 eleventyConfig.addPlugin(pageLinks, { openInNewTab: true });
 ```
+
+This example configured the plugin to open all links in a new browser tab/window/.
 
 ### Configuration Options
 
