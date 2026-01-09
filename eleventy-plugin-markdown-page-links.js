@@ -53,14 +53,13 @@ export default function (eleventyConfig, options = {}) {
         content = this.page.rawInput;
         while ((match = regex.exec(content)) !== null) {
             link = {
-                title: match[1],
-                url: match[2]
+                title: match[1].trim(),
+                url: match[2].trim()
             };
             links.push(link);
         }
-        if (debugMode && links.length > 0) {
+        if (debugMode && links.length > 0)
             console.dir(links);
-        }
         resultStr = '';
         if (links.length >= minimumLinks) {
             if (collapsible) {

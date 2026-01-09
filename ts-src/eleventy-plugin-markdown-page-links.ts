@@ -92,14 +92,18 @@ export default function (eleventyConfig: UserConfig, options: ModuleOptions = {}
     content = this.page.rawInput;
     while ((match = regex.exec(content)) !== null) {
       link = {
-        title: match[1],
-        url: match[2]
+        title: match[1].trim(),
+        url: match[2].trim()
       };
-      links.push(link);
+      // is the link already in links?
+      if (links.findIndex(l => l.url === link.url) !== -1) {
+        if (debugMode) console.log(`${PLUGIN_NAME} Duplicate link found, skipping: ${link.url}`);
+        continue;
+      }
+      links.push(link);  
     }
-    if (debugMode && links.length > 0) {
-      console.dir(links);
-    }
+
+    if (debugMode && links.length > 0) console.dir(links);
 
     resultStr = '';
     // Do we have at least the minimum number of links?

@@ -11,7 +11,8 @@ import pageLinks from './eleventy-plugin-markdown-page-links.js';
 export default async function (eleventyConfig) {
 
 	// this plugin
-	eleventyConfig.addPlugin(pageLinks, { openInNewTab: true });
+	eleventyConfig.addPlugin(pageLinks);
+	// eleventyConfig.addPlugin(pageLinks, {debugMode: true});
 
 	eleventyConfig.addPassthroughCopy("src/assets/");
 

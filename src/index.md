@@ -13,14 +13,20 @@ To use this plugin, within the page content, add the following shortcode where y
 
 With that in place, the plugin automatically generates a list of links at that location on the page. You can set global configuration options that apply to the generated links on every page. You can also override the default settings through parameters passed to the shortcode.
 
-Use the menu at the top of the page or the links below to see examples of the different options for the plugin:
+The plugin supports the following options:
 
-| Example                            | Description |
-| ---------------------------------- | ----------- |
-| [Simple](/posts/simple/)           | A simple text-based list of links. |
-| [Ordered](/posts/ordered/)         | Displays an ordered list of links. |
-| [Unordered](/posts/unordered/)     | Displays an unordered list of links. |
-| [Collapsible](/posts/collapsible/) | Displays the links in a collapsible section using the `<details>` and `<summary>` tags. |
-| [Minimal](/posts/minimum)          | Don't display links unless there are a minimum number of links on the page. |
-| [Same Window](/posts/same-window/) | Links open in the same window (the plugin's configured to open in a new window by default). |
-| [Styled](/posts/styled/)| Adds a custom CSS class to the generated output. |
+**List Types:**
+
++ [Simple list](/posts/simple/) - (default) Generates a simple list of page links with each link in a separate paragraph.
++ [Ordered list](/posts/ordered/) - Generates a list of page links as an ordered list using the `<ol>` and `</ol>` tags
++ [Unordered list](/posts/unordered/) - Generates a list of page links as an ordered list using the `<ul>` and `</ul>` tags
+
+**List Options:**
+
++ New Tab - (default) Links open in a new tab (using `target="_blank"  rel="noopener noreferrer"` in the generated anchor tag).
++ [Same Tab](/posts/same-window/) - Links open in a the same browser window.
++ [Collapsible list](/posts/collapsible/) - Link list and renders it in a collapsed section on the page using the `<details>` and `<summary>` tags.
++ [Styled List](/posts/styled/) - Allows you to apply a CSS class to the list container on the page.
++ [Minimum Links](/posts/minimum/) - Only generate the link list when there's at least a specified number of links on the page.
+
+Use the menu at the top of the page see examples of each of the available options in action.

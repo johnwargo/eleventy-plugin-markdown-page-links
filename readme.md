@@ -2,12 +2,12 @@
 
 ## Tasks
 
-- [ ] Omit duplicate links in output
+- [x] Omit duplicate links in output
 - [ ] Implement external-only flag
 - [ ] Update readme
+- [ ] Publish package
 - [ ] Write blog post
 - [ ] Share on social media
-- [ ] 
 
 ---
 
@@ -16,7 +16,7 @@ An [Eleventy](https://www.11ty.dev/) plugin that adds a shortcode to Eleventy si
 **Notes:** 
 
 + Due to some technical limitations in Eleventy, shortcodes don't have access to rendered HTML content for a page. To implement this successfully, the plugin looks for links in pre-rendered content.  Since I primarily use markdown files for site content, I built the plugin to look for markdown anchor links.
-+ I only tested this plugin using Liquid template code in Markdown files. 
++ I only tested this plugin using Liquid template code in Markdown files. This approach also makes it easy for the plugin to ignore site navigation on posts, etc.
 
 ## Installation
 
@@ -110,10 +110,10 @@ This generates the unordered list shown below:
 
 ![Sample links list](/images/image-02.png)
 
-You can also set global options for the shortcut when you load the plugin in your project's `eleventy.config.js` file. Simply add any supported configuration variable in an object to the `addPlugin` method invocation. This following example configures the plugin to open all links in a new browser tab/window/.
+You can also set global options for the shortcut when you load the plugin in your project's `eleventy.config.js` file. Simply add any supported configuration variable in an object to the `addPlugin` method invocation. This following example configures the plugin to open all links in the same browser tab/window (disabling the default behavior).
 
 ``` ts
-eleventyConfig.addPlugin(pageLinks, { openInNewTab: true });
+eleventyConfig.addPlugin(pageLinks, { openInNewTab: false });
 ```
 
 ### Configuration Options
