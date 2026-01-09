@@ -20,6 +20,4 @@ Chuck flank doner rump tongue shoulder meatball.  Pastrami sirloin cupim pork ch
 
 Cupim kevin tail, beef shank ground round jerky chicken pig.  Cow beef cupim, pastrami tongue pork chop filet mignon meatball turkey jowl alcatra doner.  T-bone alcatra brisket, beef ribs tenderloin ham pork frankfurter swine beef burgdoggen pork belly ribeye pancetta drumstick.  Jerky prosciutto pig fatback pancetta turducken.  Spare ribs bacon pastrami alcatra doner shankle chicken jowl buffalo biltong.  Pig porchetta meatball capicola buffalo.  Cupim salami meatloaf bacon tail biltong.
 
---- 
-
 Random links selected using [The Useless Web](https://theuselessweb.com/).
