@@ -32,7 +32,7 @@ In your project's eleventy.config.js file, import the package (at the top of the
 const pageLinks = require('eleventy-plugin-post-stats');
 ```
 
-And in the same file's module.exports section, along with all the other plugin statements you site uses, add the following `addPlugin` method:
+And in the same file's module.exports section, along with all the other plugin statements you site uses, add the following `addPlugin` method call:
 
 ``` ts
 module.exports = eleventyConfig => {
