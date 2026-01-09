@@ -63,13 +63,21 @@ Posts in my [personal blog](https://johnwargo.com) often reference a lot of exte
 
 Add the shortcode to a page's template to have the links appear on every page, or place the shortcode at the top or bottom of a long article to generate links for just that page. The plugin supports a configuration option, `minimumLinks`, that instructs the shortcode to generate links only if there are a specific number of links on the page.
 
-The plugin supports the following link list options:
+The plugin supports the following options:
 
-+ Simple list - Generates a simple list of page links with each as a separate paragraph in the page.
-+ Collapsible list- Generates a list of page links and renders it in a collapsed section on the page using the `<details>` and `<summary>` tags
-+ Unordered (ul) or unordered (ol) List-o-links (`orderedList`)
-+ Open in new tab (`_blank`)
+List types:
 
++ **Simple list** - Generates a simple list of page links with each as a separate paragraph in the page.
++ **Ordered list** - Generates a list of page links as an ordered list using the `<ol>` and `</ol>` tags
++ **Unordered list** - Generates a list of page links as an ordered list using the `<ul>` and `</ul>` tags
+
+List Options:
+
++ Collapsible list: Link list and renders it in a collapsed section on the page using the `<details>` and `<summary>` tags.
++ New Tab: Links open in a new tab using `target=_blank`.
++ Styled List: Allows you to apply a CSS class to the list container on the page.
+
+This repo includes a [sample app](https://mdpagelinks.netlify.app/) (hosted for free on [Netlify](https://www.netlify.com/)) that demonstrates all of these options. Check it out to learn more.
 
 ## Operation
 
