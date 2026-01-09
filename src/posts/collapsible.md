@@ -22,8 +22,8 @@ This example uses the following positional parameters:
 
 Then, finally
 
-+ The option for collapsible (true)
-+ The string value used to identify the collapsible list (Links on this Page); if you don't provide this string, the plugin uses "Links"
++ The option for collapsible (true).
++ The string value used to identify the collapsible list (Links on this Page); if you don't provide this string, the plugin uses "Links".
 
 ---
 

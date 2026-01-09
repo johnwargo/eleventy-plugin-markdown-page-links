@@ -1,6 +1,6 @@
 ---
 layout: base
-title: Eleventy Plugin Page Links Example
+title: Home
 ---
 
 This [11ty](https://www.11ty.dev/) (Eleventy) plugin adds a **Links** section to a page (post, page, whatever) listing the all the links on the current page. This is useful if you put a lot of links in your site's articles and want to provide an easy way for readers to see all the links in one place.
