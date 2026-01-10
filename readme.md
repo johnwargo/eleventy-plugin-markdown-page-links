@@ -1,16 +1,5 @@
 # Eleventy Plugin Markdown Post Links
 
-## Tasks
-
-- [x] Omit duplicate links in output
-- [x] Implement external-only flag
-- [x] Update readme
-- [x] Publish package
-- [ ] Write blog post
-- [ ] Share on social media
-
----
-
 An [Eleventy](https://www.11ty.dev/) plugin that adds a shortcode to Eleventy sites that generates a list of links from a markdown page's content. The plugin supports a variety of configuration options (configurable as global settings and/or individual settings per shortcode use). 
 
 **Notes:** 
