@@ -110,24 +110,46 @@ This generates the unordered list shown below:
 
 ![Sample links list](/images/image-02.png)
 
-You can also set global options for the shortcut when you load the plugin in your project's `eleventy.config.js` file. Simply add any supported configuration variable in an object to the `addPlugin` method invocation. This following example configures the plugin to open all links in the same browser tab/window (disabling the default behavior).
-
-``` ts
-eleventyConfig.addPlugin(pageLinks, { openInNewTab: false });
-```
-
 ### Configuration Options
 
 The shortcode supports the following options:
 
 | Name            | Option              | Description | 
 | --------------- |-------------------- | ----------- |
-| Collapsible     | `collapsible`       | Generates a collapsible section containing the list of links; see an example [here](https://mdpagelinks.netlify.app/posts/collapsible/). Default: `false` |
-| External Links  | `externalLinksOnly` | Default: `false` |
-| List Class      | `listClass`         | Default: '' |
-| List Type.      | `listType`          | Default: 0     Supported options are `0` {Simple), `1` (Ordered), `2` (Unordered) |
-| Minimum Links   | `minimumLinks`      | Default: 0 |
-| Open in New Tab | `openInNewTab`      | Default: `true` |
-| Section Title   | `sectionTitle`      | Default: 'Links' |
+| Collapsible     | `collapsible`       | Generates a collapsible section containing the list of links. When you enable this option, you must also specify a value for `sectionTitle`. [Example](https://mdpagelinks.netlify.app/posts/collapsible/). Default: `false` |
+| External Links  | `externalLinksOnly` | Omits local links from the generated output. [Example](https://mdpagelinks.netlify.app/posts/external-only/). Default: `false` |
+| List Class      | `listClass`         | Defines the name of the CSS Class you want added to the list container. [Example](https://mdpagelinks.netlify.app/posts/styled/). Default: '' |
+| List Type       | `listType`          | Specifies the type of list generated; supported options are `0` {Simple), `1` (Ordered), `2` (Unordered). Examples: [Simple](https://mdpagelinks.netlify.app/posts/simple/), [Ordered](https://mdpagelinks.netlify.app/posts/ordered/), [Unordered](https://mdpagelinks.netlify.app/posts/unordered/). Default: 0  |
+| Minimum Links   | `minimumLinks`      | Specifies the minimum number of links on the page required before the shortcode generates the link list. If your site generally doesn't have a lot of links per page, you can use this it to only generates links for articles with a greater number of links. [Example](https://mdpagelinks.netlify.app/posts/minimum/). Default: 0 |
+| Open in New Tab | `openInNewTab`      | By default, the shortcut generates links that open in a new browser window/tab. With this option set to `false`, when a user clicks one of the links, the linked content will replace the current page in the browser. [Example](https://mdpagelinks.netlify.app/posts/same-window/). Default: `true` |
+| Section Title   | `sectionTitle`      | With `collapsible` enabled, this configuration option defines the text the plugin generates as the Summary (`<summary></summary>`) of the collapsible section. If you don't provide a value for this configuration option, the shortcut uses the default value. [Example](https://mdpagelinks.netlify.app/posts/collapsible/). Default: 'Links' |
 
-eleventyConfig.addShortcode("pageLinks", function (listType?: ListType, minimumLinks?: number, openInNewTab?: boolean, externalLinksOnly?: boolean, listClass?: string, collapsible?: boolean, sectionTitle?: string, debugMode?: boolean) {
+You can set any of these settings as global options for the shortcut when you load the plugin in your project's `eleventy.config.js` file. Simply add any supported configuration variable in an object to the `addPlugin` method invocation. This following example configures the plugin to open all links in the same browser tab/window (disabling the default behavior).
+
+``` ts
+eleventyConfig.addPlugin(pageLinks, { openInNewTab: false });
+```
+
+Specify any of the configuration options as parameters to the shortcode; as positional parameters, the order is the following:
+
+1. `listType?` ListType
+2. `minimumLinks`: number
+3. `openInNewTab`: boolean
+4. `externalLinksOnly`: boolean
+5. `listClass`: string
+6. `collapsible`: boolean
+7. `sectionTitle`: string
+
+The `ListType` enum looks like this:
+
+``` ts
+enum ListType {
+  Simple,      // 0
+  Ordered,     // 1
+  Unordered,   // 2
+}
+```
+
+**Note:** Some time after launch, but perhaps before launch, I'll configure the shortCode code to use named parameters.
+
+Refer to the [sample app](https://mdpagelinks.netlify.app/) for examples for each of these options.
