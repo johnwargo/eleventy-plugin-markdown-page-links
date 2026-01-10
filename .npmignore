@@ -12,3 +12,4 @@ package-lock.json
 pub.mjs
 tsconfig.json
 *.md
+*.cmd
