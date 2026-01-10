@@ -14,6 +14,7 @@
   "author": "John M. Wargo",
   "license": "MIT",
   "type": "module",
+  "main": "eleventy-plugin-markdown-page-links.js",
   "scripts": {
     "build": "tsc && eleventy --quiet",
     "start": "tsc && eleventy --serve --quiet",

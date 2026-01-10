@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.0.14 - January 10, 2026
+
+Added main property to the project's `package.json` file. 
+
 ## v0.0.13 - January 10, 2026
 
 Fixed a bug where the shortcut would generate the list if the page had no links at all. The code checked to see if it had at least the minimum number of links, but not that there were more than 0 links. 
