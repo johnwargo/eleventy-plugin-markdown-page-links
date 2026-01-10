@@ -1,3 +1,1 @@
-npm version patch 
-git push
-npm publish
+npm version patch && git push && npm publish
