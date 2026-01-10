@@ -108,14 +108,14 @@ export default function (eleventyConfig: UserConfig, options: ModuleOptions = {}
         if (debugMode) console.log(`${PLUGIN_NAME} Duplicate link found, skipping: ${link.url}`);
         continue;
       }
-      links.push(link);  
+      links.push(link);
     }
 
     if (debugMode && links.length > 0) console.dir(links);
 
     resultStr = '';
     // Do we have at least the minimum number of links?
-    if (links.length >= minimumLinks!) {
+    if (links.length > 0 && links.length >= minimumLinks!) {
       // Then build the link list
       if (collapsible) {
         resultStr += `<details>\n<summary>${sectionTitle}</summary>\n`;

@@ -71,7 +71,7 @@ export default function (eleventyConfig, options = {}) {
         if (debugMode && links.length > 0)
             console.dir(links);
         resultStr = '';
-        if (links.length >= minimumLinks) {
+        if (links.length > 0 && links.length >= minimumLinks) {
             if (collapsible) {
                 resultStr += `<details>\n<summary>${sectionTitle}</summary>\n`;
             }
