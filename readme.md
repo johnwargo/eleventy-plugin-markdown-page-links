@@ -4,8 +4,8 @@
 
 - [x] Omit duplicate links in output
 - [x] Implement external-only flag
-- [ ] Update readme
-- [ ] Publish package
+- [x] Update readme
+- [x] Publish package
 - [ ] Write blog post
 - [ ] Share on social media
 
