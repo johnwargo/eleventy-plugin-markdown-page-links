@@ -1,6 +1,6 @@
 {
   "name": "eleventy-plugin-markdown-page-links",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "An Eleventy plugin to generate a list of links for a particular page.",
   "repository": {
     "type": "git",
