@@ -118,12 +118,16 @@ eleventyConfig.addPlugin(pageLinks, { openInNewTab: false });
 
 ### Configuration Options
 
-| Option              | Description | 
-| ------------------- | ----------- |
-| `collapsible`       | Default: `false` |
-| `externalLinksOnly` | Default: `false` |
-| `listClass`         | Default: '' |
-| `listType`          | Default: 0     Supported options are `0` {Simple), `1` (Ordered), `2` (Unordered) |
-| `minimumLinks`      | Default: 0 |
-| `openInNewTab`      | Default: `true` |
-| `sectionTitle`      | Default: 'Links' |
+The shortcode supports the following options:
+
+| Name            | Option              | Description | 
+| --------------- |-------------------- | ----------- |
+| Collapsible     | `collapsible`       | Generates a collapsible section containing the list of links; see an example [here](https://mdpagelinks.netlify.app/posts/collapsible/). Default: `false` |
+| External Links  | `externalLinksOnly` | Default: `false` |
+| List Class      | `listClass`         | Default: '' |
+| List Type.      | `listType`          | Default: 0     Supported options are `0` {Simple), `1` (Ordered), `2` (Unordered) |
+| Minimum Links   | `minimumLinks`      | Default: 0 |
+| Open in New Tab | `openInNewTab`      | Default: `true` |
+| Section Title   | `sectionTitle`      | Default: 'Links' |
+
+eleventyConfig.addShortcode("pageLinks", function (listType?: ListType, minimumLinks?: number, openInNewTab?: boolean, externalLinksOnly?: boolean, listClass?: string, collapsible?: boolean, sectionTitle?: string, debugMode?: boolean) {
