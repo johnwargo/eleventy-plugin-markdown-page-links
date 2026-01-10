@@ -18,7 +18,7 @@ npm install eleventy-plugin-markdown-page-links
 In your project's eleventy.config.js file, import the package (at the top of the file) using:
 
 ``` ts
-import pageLinks from 'eleventy-plugin-markdown-page-links.js';
+import pageLinks from 'eleventy-plugin-markdown-page-links';
 ```
 
 And in the same file's module.exports section, along with all the other plugin statements you site uses, add the following `addPlugin` method call:
@@ -35,7 +35,7 @@ module.exports = eleventyConfig => {
 The complete file should look something like the following (but with your site's other stuff in it as well):
 
 ``` ts
-import pageLinks from 'eleventy-plugin-markdown-page-links.js';
+import pageLinks from 'eleventy-plugin-markdown-page-links';
 
 module.exports = eleventyConfig => {
 
