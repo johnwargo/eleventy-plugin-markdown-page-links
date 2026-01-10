@@ -11,5 +11,6 @@ eleventy.config.js
 package-lock.json
 pub.mjs
 tsconfig.json
-*.md
+readme.md
+changelog.md
 *.cmd
