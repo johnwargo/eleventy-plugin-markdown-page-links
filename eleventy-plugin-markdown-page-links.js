@@ -15,7 +15,7 @@ const defaultConfig = {
     'sectionTitle': 'Links',
 };
 const PLUGIN_NAME = 'Eleventy-Plugin-Markdown-Page-Links';
-const regex = /\!*\[([^\]]+)\]\(([^)]+)\)/g;
+const regex = /(?<!\!)\[([^\]]+)\]\(([^)]+)\)/g;
 function buildLinkList(links, delimiter, newWindow, debugMode) {
     if (debugMode)
         console.log(`Building link list with delimiter: ${delimiter}, newWindow: ${newWindow}`);

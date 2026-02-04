@@ -15,6 +15,7 @@ export default async function (eleventyConfig) {
 	// eleventyConfig.addPlugin(pageLinks, {debugMode: true});
 
 	eleventyConfig.addPassthroughCopy("src/assets/");
+	eleventyConfig.addPassthroughCopy("src/images/");
 
 	return {
 		dir: {

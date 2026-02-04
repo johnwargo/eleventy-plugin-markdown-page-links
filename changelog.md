@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.0.15 - February 4, 2026
+
++ Added images to the test pages.
++ Modified the regex to ignore image links.
+
 ## v0.0.14 - January 10, 2026
 
 Added main property to the project's `package.json` file. 
