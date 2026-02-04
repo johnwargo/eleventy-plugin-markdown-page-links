@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.0.15 - February 4, 2026
+## v0.0.17 - February 4, 2026
 
 + Added images to the test pages.
 + Modified the regex to ignore image links.
